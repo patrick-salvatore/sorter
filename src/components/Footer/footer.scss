@@ -1,0 +1,32 @@
+$footer-color: #000;
+
+.footer {
+  display: grid;
+  background-color: $footer-color;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto;
+  grid-gap: 15px;
+  justify-items: center;
+  width: 100%;
+  bottom: 0;
+  padding: 15px 0;
+
+  .social-media {
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto;
+
+    .social-media__icon {
+      display: inline-block;
+      color: white;
+      font-size: 25px;
+      height: 20px;
+    }
+  }
+  
+  .text {
+    color: white;
+    margin: 0;
+  }
+}
