@@ -6,12 +6,6 @@ import Tab from '@material-ui/core/Tab';
 import { PathFinder } from 'Pages/pathFinder';
 import { SortingAlgorithms } from 'Pages/sortingAlgorithms';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: any;
-  value: any;
-}
-
 function a11yProps(index: number): { id: string; 'aria-controls': string } {
   return {
     id: `simple-tab-${index}`,
