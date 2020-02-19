@@ -1,6 +1,15 @@
-import React from 'react';
-// import { Route, Switch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { PathFinder } from 'Pages/pathFinder';
+import { SortingAlgorithms } from 'Pages/sortingAlgorithms';
+import Navigation from 'components/NavigationTop';
 
 export const AppView: React.FC = (): JSX.Element => {
-  return <div className="container">YOUR REACT APP</div>;
+  const [component, setComponent] = useState();
+
+  return (
+    <>
+      <Navigation />
+    </>
+  );
 };

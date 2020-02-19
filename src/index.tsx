@@ -9,9 +9,7 @@ import { render } from 'react-dom';
 import { AppView } from './routes';
 
 import './index.scss';
-
 const appRoot = document.getElementById('app-r--root');
-
 const app = <AppView />;
 
 module.hot && module.hot.accept();

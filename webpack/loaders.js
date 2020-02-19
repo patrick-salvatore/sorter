@@ -7,30 +7,27 @@ const htmlLoader = {
   loader: 'html-loader',
 };
 
-const jsLoader = {
-  test: /\.(js|jsx)$/,
-  exclude: [/node_modules/, /\.test.tsx?$/],
-  use: {
-    loader: 'babel-loader',
-    options: {
-      presets: [
-        '@babel/preset-typescript',
-        '@babel/preset-react',
-        '@babel/preset-env',
-      ],
-      plugins: ['@babel/plugin-proposal-object-rest-spread'],
-    },
-  },
-};
+// const jsLoader = {
+//   test: /\.(js|jsx)$/,
+//   exclude: [/node_modules/, /\.test.tsx?$/],
+//   use: {
+//     loader: 'babel-loader',
+//     options: {
+//       presets: [
+//         '@babel/preset-typescript',
+//         '@babel/preset-react',
+//         '@babel/preset-env',
+//       ],
+//       plugins: ['@babel/plugin-proposal-object-rest-spread'],
+//     },
+//   },
+// };
 
 const tsLoader = {
   test: /(tsx|ts)$/,
   exclude: /node_modules/,
   use: {
     loader: 'ts-loader',
-    options: {
-      transpileOnly: true,
-    },
   },
 };
 
@@ -114,7 +111,7 @@ const fontLoader = {
 
 export const rules = [
   htmlLoader,
-  jsLoader,
+  // jsLoader,
   tsLoader,
   // ...stylesLoader,
   stylesLoader,
