@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SortingBars from 'components/sorting-bars';
 import 'scss/sorting-algorithms.scss';
 

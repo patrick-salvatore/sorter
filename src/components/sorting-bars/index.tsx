@@ -23,7 +23,7 @@ const index = (): JSX.Element => {
   const [randomArray, setRandomArray] = useState<Array<number>>([]);
 
   useEffect(() => {
-    setRandomArray(generateRandomIntArray(5, 740));
+    setRandomArray(generateRandomIntArray(5, 700));
 
     return (): void => {
       setRandomArray([]);

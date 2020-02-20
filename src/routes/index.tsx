@@ -28,22 +28,22 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 const components = {
-  0: function(): React.FC {
-    return PathFinder;
+  0: function() {
+    return { component: PathFinder, props: {} };
   },
-  1: function(): React.FC {
-    return SortingAlgorithms;
+  1: function() {
+    return { component: SortingAlgorithms, props: {} };
   },
 };
 
 export const AppView: React.FC = (): JSX.Element => {
   const styles = useStyles();
   const [value, setValue] = useState(0);
-  const [component, setComponent] = useState(<PathFinder />);
+  const [view, setView] = useState({ component: PathFinder, props: {} });
 
   const handleChange = (e: React.ChangeEvent<{}>, newValue: number): void => {
     setValue(newValue);
-    setComponent(components[newValue]());
+    setView(components[newValue]());
   };
 
   return (
@@ -62,7 +62,7 @@ export const AppView: React.FC = (): JSX.Element => {
           />
         </Tabs>
       </AppBar>
-      {component}
+      {React.createElement(view.component, view.props)}
     </div>
   );
 };
