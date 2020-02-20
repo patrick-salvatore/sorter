@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "clean-dist": "rimraf dist/*",
+    "clean-build": "rimraf build/*",
     "test": "jest --watchAll",
     "start": "webpack-dev-server --progress --overlay --config webpack/dev.babel.js",
-    "build": "yarn run clean-dist && webpack --mode production --config webpack/prod.babel.js"
+    "build": "yarn run clean-build && webpack --mode production --config webpack/prod.babel.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",

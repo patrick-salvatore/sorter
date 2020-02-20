@@ -6,11 +6,13 @@ import 'react-app-polyfill/ie11';
 
 import React from 'react';
 import { render } from 'react-dom';
-import { AppView } from './routes';
+// import { AppView } from './routes';
+import { SortingAlgorithms } from 'Pages/sortingAlgorithms';
 
-import './index.scss';
+import 'scss/sorting-algorithms.scss';
+
 const appRoot = document.getElementById('app-r--root');
-const app = <AppView />;
+const app = <SortingAlgorithms />;
 
 module.hot && module.hot.accept();
 render(app, appRoot);

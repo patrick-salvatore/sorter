@@ -18,11 +18,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
-  appBar: {
+  bar: {
     padding: 0,
     margin: 0,
-    backgroundColor: 'red',
+    backgroundColor: '#34495e',
+    color: '#fff',
   },
+  tab: { fontWeight: 'bold' },
 }));
 
 const components = {
@@ -35,7 +37,7 @@ const components = {
 };
 
 export const AppView: React.FC = (): JSX.Element => {
-  const classes = useStyles();
+  const styles = useStyles();
   const [value, setValue] = useState(0);
   const [component, setComponent] = useState(<PathFinder />);
 
@@ -45,15 +47,19 @@ export const AppView: React.FC = (): JSX.Element => {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+    <div>
+      <AppBar position="static" className={styles.bar}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
         >
-          <Tab label="PATH FINDER" {...a11yProps(0)} />
-          <Tab label="SORTING ALGORITHMS" {...a11yProps(1)} />
+          <Tab label="PATH FINDER" {...a11yProps(0)} className={styles.tab} />
+          <Tab
+            label="SORTING ALGORITHMS"
+            {...a11yProps(1)}
+            className={styles.tab}
+          />
         </Tabs>
       </AppBar>
       {component}

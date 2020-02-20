@@ -1,5 +1,11 @@
 import React from 'react';
+import SortingBars from 'components/sorting-bars';
+import 'scss/sorting-algorithms.scss';
 
 export const SortingAlgorithms = (): JSX.Element => {
-  return <div>SORTING ALGORITHMS</div>;
+  return (
+    <div className="sorting-alorigthms__wrapper">
+      <SortingBars />
+    </div>
+  );
 };

@@ -8,7 +8,7 @@ export const dirName = path.join(__dirname, '../');
 
 const entry = {
   vendor: 'react',
-  app: entryPath,
+  'sorting-algorithms': entryPath,
 };
 
 const output = {

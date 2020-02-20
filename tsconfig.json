@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "plugins": [{ "name": "typescript-tslint-plugin" }],
-    "outDir": "./dist",
+    "outDir": "./build",
     "sourceMap": true,
     "baseUrl": "./",
     "paths": {
@@ -9,7 +9,7 @@
       "Routes/*": ["src/routes/*"],
       "hooks/*": ["./src/hooks/*"],
       "components/*": ["./src/components/*"],
-      "styledComponents/*": ["webpack/styledComponents/*"],
+      "styledComponents/*": ["./src/styledComponents/*"],
       "scss/*": ["./src/scss/*"],
       "img/*": ["./src/img/*"]
     },
@@ -40,7 +40,7 @@
   "exclude": [
     "./node_modules",
     "./public",
-    "./dist",
+    "./build",
     "./.vscode",
     "**/*.test.tsx"
   ],
