@@ -47,10 +47,11 @@ const resolve = {
     hooks: path.resolve(dirName, 'src', 'hooks'),
     components: path.resolve(dirName, 'src', 'components'),
     scss: path.resolve(dirName, 'src', 'scss'),
-    Pages: path.resolve(dirName, 'src', 'Pages'),
-    Routes: path.resolve(dirName, 'src', 'routes'),
+    pages: path.resolve(dirName, 'src', 'Pages'),
+    routes: path.resolve(dirName, 'src', 'routes'),
     img: path.resolve(dirName, 'src', 'img'),
     styledComponents: path.resolve(dirName, 'src', 'styledComponents'),
+    utils: path.resolve(dirName, 'src', 'utils'),
   },
 };
 

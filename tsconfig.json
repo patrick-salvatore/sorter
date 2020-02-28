@@ -5,13 +5,14 @@
     "sourceMap": true,
     "baseUrl": "./",
     "paths": {
-      "Pages/*": ["./src/Pages/*"],
-      "Routes/*": ["src/routes/*"],
+      "pages/*": ["src/pages/*"],
+      "routes/*": ["src/routes/*"],
       "hooks/*": ["./src/hooks/*"],
       "components/*": ["./src/components/*"],
       "styledComponents/*": ["./src/styledComponents/*"],
       "scss/*": ["./src/scss/*"],
-      "img/*": ["./src/img/*"]
+      "img/*": ["./src/img/*"],
+      "utils/*": ["./src/utils/*"],
     },
     "target": "es5",
     "declaration": false,

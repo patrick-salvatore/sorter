@@ -3,8 +3,8 @@ import { makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { PathFinder } from 'Pages/pathFinder';
-import { SortingAlgorithms } from 'Pages/sortingAlgorithms';
+import { PathFinder } from 'pages/pathFinder';
+import { SortingAlgorithms } from 'pages/sortingAlgorithms';
 
 function a11yProps(index: number): { id: string; 'aria-controls': string } {
   return {
@@ -29,17 +29,17 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const components = {
   0: function() {
-    return { component: PathFinder, props: {} };
+    return { component: SortingAlgorithms, props: {} };
   },
   1: function() {
-    return { component: SortingAlgorithms, props: {} };
+    return { component: PathFinder, props: {} };
   },
 };
 
 export const AppView: React.FC = (): JSX.Element => {
   const styles = useStyles();
   const [value, setValue] = useState(0);
-  const [view, setView] = useState({ component: PathFinder, props: {} });
+  const [view, setView] = useState({ component: SortingAlgorithms, props: {} });
 
   const handleChange = (e: React.ChangeEvent<{}>, newValue: number): void => {
     setValue(newValue);
@@ -54,12 +54,12 @@ export const AppView: React.FC = (): JSX.Element => {
           onChange={handleChange}
           aria-label="simple tabs example"
         >
-          <Tab label="PATH FINDER" {...a11yProps(0)} className={styles.tab} />
           <Tab
             label="SORTING ALGORITHMS"
-            {...a11yProps(1)}
+            {...a11yProps(0)}
             className={styles.tab}
           />
+          <Tab label="PATH FINDER" {...a11yProps(1)} className={styles.tab} />
         </Tabs>
       </AppBar>
       {React.createElement(view.component, view.props)}
