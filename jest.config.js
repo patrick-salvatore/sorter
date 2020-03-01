@@ -1,5 +1,10 @@
 module.exports = {
   roots: ['<rootDir>/src'],
+  globals: {
+    'ts-jest': {
+      diagnostics: false,
+    },
+  },
   transform: {
     '.(ts|tsx)': 'ts-jest',
   },

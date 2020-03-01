@@ -4,43 +4,36 @@ const swap = (arr, i, j): void => {
   arr[j] = temp;
 };
 
-const partition = (arr, low, high): number => {
-  const pivot = Math.floor((high + low) / 2);
-  let i = low;
-  let j = high;
+const partition = (arr, start, end): number => {
+  const pivot = end;
 
-  while (i <= j) {
-    while (arr[i] < arr[pivot]) {
+  let i = start - 1;
+  let j = start;
+
+  while (j < pivot) {
+    if (arr[j] > arr[pivot]) {
+      j++;
+    } else {
       i++;
-    }
-
-    while (arr[j] > arr[pivot]) {
-      j--;
-    }
-
-    if (i <= j) {
-      swap(arr, i, j);
-      i++;
-      j--;
+      swap(arr, j, i);
+      j++;
     }
   }
 
-  return i;
+  swap(arr, i + 1, pivot);
+
+  return i + 1;
 };
 
 export const quickSort = (arr, low, high): number[] => {
   let index;
 
-  if (arr.length > 1) {
+  if (low < high) {
     index = partition(arr, low, high);
 
-    if (low < index - 1) {
-      quickSort(arr, 0, index - 1);
-    }
+    quickSort(arr, low, index - 1);
 
-    if (index < high) {
-      quickSort(arr, index, high);
-    }
+    quickSort(arr, index + 1, high);
   }
 
   return arr;
