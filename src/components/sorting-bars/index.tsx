@@ -5,6 +5,7 @@ const index = ({ randomArray }): JSX.Element => {
     <div className="sorting-bars__wrapper">
       {randomArray.map((el, i) => (
         <div
+          className="js-array-bar"
           key={i}
           style={{
             height: `${el}px`,

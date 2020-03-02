@@ -28,10 +28,10 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 const components = {
-  0: function() {
+  0: function(): { component: React.FC; props: any } {
     return { component: SortingAlgorithms, props: {} };
   },
-  1: function() {
+  1: function(): { component: React.FC; props: any } {
     return { component: PathFinder, props: {} };
   },
 };

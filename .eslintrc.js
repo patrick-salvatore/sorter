@@ -73,12 +73,16 @@ module.exports = {
       },
     ],
     'no-param-reassign': 'off',
-    // 'compat/compat': 2,
     'prettier/prettier': [2, { singleQuote: true, trailingComma: 'es5' }],
-    '@typescript-eslint/interface-name-prefix' : [0],
+    
+    // react rules
     'react/prop-types': [0],
-    // react
     // 'react-hooks/rules-of-hooks': 'error',
     // 'react-hooks/exhaustive-deps': 'warn',
+
+    // typescript rules
+    '@typescript-eslint/interface-name-prefix' : [0],
+    '@typescript-eslint/camelcase': [0],
+    '@typescript-eslint/no-explicit-any': [0]
   },
 };
