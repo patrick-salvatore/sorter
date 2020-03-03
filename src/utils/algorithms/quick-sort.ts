@@ -1,12 +1,15 @@
-const swap = (arr, i, j): void => {
+const animations = [];
+
+const swap = (arr, i, j) => {
   const temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
+
+  animations.push([i, j] as never);
 };
 
-const partition = (arr, start, end): number => {
+const partition = (arr, start, end) => {
   const pivot = end;
-
   let i = start - 1;
   let j = start;
 
@@ -25,16 +28,14 @@ const partition = (arr, start, end): number => {
   return i + 1;
 };
 
-export const quickSort = (arr, low, high): number[] => {
+export const quickSort = (arr, low: number, high: number): any[] => {
   let index;
 
   if (low < high) {
     index = partition(arr, low, high);
-
     quickSort(arr, low, index - 1);
-
     quickSort(arr, index + 1, high);
   }
 
-  return arr;
+  return animations;
 };

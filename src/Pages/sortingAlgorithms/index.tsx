@@ -22,8 +22,28 @@ export const SortingAlgorithms = (): JSX.Element => {
   };
 
   const quickSortBtn = (): void => {
-    const sortedArr = quickSort(randomArray, 0, randomArray.length - 1);
-    setRandomArray([...sortedArr]);
+    const animationArr = quickSort(randomArray, 0, randomArray.length - 1);
+    // const barArr = document.querySelectorAll('.js-array-bar');
+    const barArr = Array.from(
+      document.getElementsByClassName('js-array-bar') as HTMLCollectionOf<
+        HTMLElement
+      >
+    );
+
+    console.log(animationArr);
+
+    // for (let i = 0; i < animationArr.length; i++) {
+    //   const [indexOne, indexTwo] = animationArr[i];
+    //   setTimeout(() => {
+    //     barArr[indexTwo.index].style.height =
+    //       barArr[indexOne.index].style.height;
+
+    //     barArr[indexOne.index].style.height =
+    //       barArr[indexTwo.index].style.height;
+    //   }, i * 20);
+    // }
+
+    // setRandomArray([...sortedArr]);
   };
 
   const mergeSortBtn = (): void => {
