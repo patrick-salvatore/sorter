@@ -1,8 +1,9 @@
 import React from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
+import Button from 'components/button';
 // import Divider from '@material-ui/core/Divider';
 // import Slider from '@material-ui/core/Slider';
 // import Typography from '@material-ui/core/Typography';
@@ -42,20 +43,75 @@ const index = ({ quickSortBtn, mergeSortBtn, resetArray }): JSX.Element => {
     <AppBar position="static" className={classes.root}>
       <Toolbar className={classes.root}>
         <div>
-          <Button color="inherit" onClick={quickSortBtn}>
+          <Button
+            onClick={quickSortBtn}
+            className="js-toolbar-button"
+            style={{
+              color: 'inherit',
+              backgroundColor: 'inherit',
+              border: 'none',
+              fontSize: '16px',
+              fontFamliy: 'Roboto',
+              padding: '6px 8px',
+            }}
+          >
             Quick Sort
           </Button>
-          <Button color="inherit" onClick={mergeSortBtn}>
+          <Button
+            onClick={mergeSortBtn}
+            className="js-toolbar-button"
+            style={{
+              color: 'inherit',
+              backgroundColor: 'inherit',
+              border: 'none',
+              fontSize: '16px',
+              fontFamliy: 'Roboto',
+              padding: '6px 8px',
+            }}
+          >
             Merge Sort
           </Button>
-          <Button color="inherit" onClick={() => alert('BUBBLE SORT')}>
+          <Button
+            onClick={() => alert('BUBBLE SORT')}
+            className="js-toolbar-button"
+            style={{
+              color: 'inherit',
+              backgroundColor: 'inherit',
+              border: 'none',
+              fontSize: '16px',
+              fontFamliy: 'Roboto',
+              padding: '6px 8px',
+            }}
+          >
             Bubble Sort
           </Button>
-          <Button color="inherit" onClick={() => alert('HEAP SORT')}>
+          <Button
+            onClick={() => alert('HEAP SORT')}
+            className="js-toolbar-button"
+            style={{
+              color: 'inherit',
+              backgroundColor: 'inherit',
+              border: 'none',
+              fontSize: '16px',
+              fontFamliy: 'Roboto',
+              padding: '6px 8px',
+            }}
+          >
             Heap Sort
           </Button>
         </div>
-        <Button color="inherit" onClick={resetArray}>
+        <Button
+          style={{
+            color: 'inherit',
+            backgroundColor: 'inherit',
+            border: 'none',
+            fontSize: '16px',
+            fontFamliy: 'Roboto',
+            padding: '6px 8px',
+          }}
+          onClick={resetArray}
+          className="js-toolbar-button"
+        >
           RESET ARRAY
         </Button>
       </Toolbar>
