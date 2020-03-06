@@ -36,7 +36,12 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const index = ({ quickSortBtn, mergeSortBtn, resetArray }): JSX.Element => {
+const index = ({
+  quickSortBtn,
+  mergeSortBtn,
+  bubbleSortBtn,
+  resetArray,
+}): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -72,7 +77,7 @@ const index = ({ quickSortBtn, mergeSortBtn, resetArray }): JSX.Element => {
             Merge Sort
           </Button>
           <Button
-            onClick={() => alert('BUBBLE SORT')}
+            onClick={bubbleSortBtn}
             className="js-toolbar-button"
             style={{
               color: 'inherit',
@@ -110,7 +115,7 @@ const index = ({ quickSortBtn, mergeSortBtn, resetArray }): JSX.Element => {
             padding: '6px 8px',
           }}
           onClick={resetArray}
-          className="js-toolbar-button"
+          id="js-toolbar-reset-button"
         >
           RESET ARRAY
         </Button>

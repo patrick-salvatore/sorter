@@ -2,6 +2,7 @@ import React from 'react';
 
 interface IButtonProps {
   className?: string;
+  id?: string;
   children: React.ReactChild;
   onClick: (e: React.MouseEvent) => void;
   style?: { [type: string]: string };

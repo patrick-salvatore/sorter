@@ -22,6 +22,7 @@ function doMerge(
       mainArray[k++] = auxiliaryArray[j++];
     }
   }
+
   while (i <= middleIdx) {
     animations.push([i, i]);
     animations.push([i, i]);
@@ -29,6 +30,7 @@ function doMerge(
 
     mainArray[k++] = auxiliaryArray[i++];
   }
+
   while (j <= endIdx) {
     animations.push([j, j]);
     animations.push([j, j]);
