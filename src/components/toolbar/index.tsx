@@ -24,7 +24,7 @@ const useStyles = makeStyles(() =>
       display: 'flex',
       alignItems: 'center',
       width: '250px',
-      padding: '0 10px',
+      margin: '0 10px',
     },
     divider: {
       width: '3px',
@@ -57,7 +57,7 @@ const index = ({
               border: 'none',
               fontSize: '16px',
               fontFamliy: 'Roboto',
-              padding: '6px 8px',
+              margin: '6px 8px',
             }}
           >
             Quick Sort
@@ -71,7 +71,7 @@ const index = ({
               border: 'none',
               fontSize: '16px',
               fontFamliy: 'Roboto',
-              padding: '6px 8px',
+              margin: '6px 8px',
             }}
           >
             Merge Sort
@@ -85,7 +85,7 @@ const index = ({
               border: 'none',
               fontSize: '16px',
               fontFamliy: 'Roboto',
-              padding: '6px 8px',
+              margin: '6px 8px',
             }}
           >
             Bubble Sort
@@ -99,7 +99,7 @@ const index = ({
               border: 'none',
               fontSize: '16px',
               fontFamliy: 'Roboto',
-              padding: '6px 8px',
+              margin: '6px 8px',
             }}
           >
             Heap Sort
@@ -112,7 +112,7 @@ const index = ({
             border: 'none',
             fontSize: '16px',
             fontFamliy: 'Roboto',
-            padding: '6px 8px',
+            margin: '6px 8px',
           }}
           onClick={resetArray}
           id="js-toolbar-reset-button"
