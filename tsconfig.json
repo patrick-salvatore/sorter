@@ -5,7 +5,7 @@
     "sourceMap": true,
     "baseUrl": "./",
     "paths": {
-      "pages/*": ["src/pages/*"],
+      "pages/*": ["src/Pages/*"],
       "routes/*": ["src/routes/*"],
       "hooks/*": ["./src/hooks/*"],
       "components/*": ["./src/components/*"],

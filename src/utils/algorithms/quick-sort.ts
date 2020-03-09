@@ -6,29 +6,34 @@ const swap = (arr, i, j): void => {
 
 const partition = (arr, start, end, animations): number => {
   const pivot = start;
-  let left = start + 1;
-  let right = end;
+  let i = start + 1;
+  let j = end;
 
-  while (right >= left) {
-    if (arr[right] < arr[pivot] && arr[left] > arr[pivot]) {
-      // animations.push([])
-      swap(arr, right, left);
+  while (j >= i) {
+    if (arr[j] < arr[pivot] && arr[i] > arr[pivot]) {
+      animations.push([i, j]);
+      animations.push([j, arr[i]]);
+      animations.push([i, arr[j]]);
+      swap(arr, j, i);
     }
 
-    if (arr[right] >= arr[pivot]) {
-      right--;
+    if (arr[j] >= arr[pivot]) {
+      j--;
     }
 
-    if (arr[left] <= arr[pivot]) {
-      left++;
+    if (arr[i] <= arr[pivot]) {
+      i++;
     }
   }
 
-  if (pivot !== right) {
-    swap(arr, right, pivot);
+  if (pivot !== j) {
+    animations.push([j, pivot]);
+    animations.push([j, arr[pivot]]);
+    animations.push([i, arr[pivot]]);
+    swap(arr, j, pivot);
   }
 
-  return right;
+  return j;
 };
 
 const doQuickSort = (
