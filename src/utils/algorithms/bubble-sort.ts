@@ -1,22 +1,27 @@
-const swap = (arr, i, j) => {
+const swap = (arr, i, j): void => {
   const temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
 };
 
-const doBubbleSort = arr => {
-  const len = arr.length;
+const doBubbleSort = (arr): void => {
+  let end = arr.length;
+  let sorted;
 
-  for (let i = 0; i < len; i++) {
-    for (let j = 0; j < len - 1; j++) {
-      if (arr[j] < arr[j + 1]) {
-        swap(arr, i, j);
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < end; i++) {
+      if (arr[i] > arr[i + 1]) {
+        swap(arr, i, i + 1);
+        sorted = false;
       }
     }
+
+    end--;
   }
 };
 
-export const bubbleSort = arr => {
+export const bubbleSort = (arr): any[] => {
   const animations = [];
   const auxiliaryArr = arr.slice();
   if (arr.length <= 1) return arr;
@@ -24,4 +29,6 @@ export const bubbleSort = arr => {
   doBubbleSort(auxiliaryArr);
 
   console.log(auxiliaryArr);
+
+  return animations;
 };

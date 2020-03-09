@@ -1,12 +1,9 @@
 import React from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-// import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from 'components/button';
-// import Divider from '@material-ui/core/Divider';
 // import Slider from '@material-ui/core/Slider';
-// import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -36,10 +33,19 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const index = ({
+interface IToolBarProps {
+  quickSortBtn: () => void;
+  mergeSortBtn: () => void;
+  bubbleSortBtn: () => void;
+  heapSortBtn: () => void;
+  resetArray: () => void;
+}
+
+const index: React.FC<IToolBarProps> = ({
   quickSortBtn,
   mergeSortBtn,
   bubbleSortBtn,
+  heapSortBtn,
   resetArray,
 }): JSX.Element => {
   const classes = useStyles();
@@ -91,7 +97,7 @@ const index = ({
             Bubble Sort
           </Button>
           <Button
-            onClick={() => alert('HEAP SORT')}
+            onClick={heapSortBtn}
             className="js-toolbar-button"
             style={{
               color: 'inherit',

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { generateRandomIntArray } from 'utils/index';
-import { quickSort, mergeSort, bubbleSort } from 'utils/algorithms';
+import { quickSort, mergeSort, bubbleSort, heapSort } from 'utils/algorithms';
 import SortingBars from 'components/sorting-bars';
 import Toolbar from 'components/Toolbar';
 
@@ -132,6 +132,11 @@ export const SortingAlgorithms = (): JSX.Element => {
     const animations = bubbleSort(randomArray);
   };
 
+  const heapSortBtn = (): void => {
+    const animations = heapSort(randomArray);
+    alert('HEAP SORT');
+  };
+
   return (
     <div className="sorting-algorithms__wrapper">
       <SortingBars randomArray={randomArray} />
@@ -139,6 +144,7 @@ export const SortingAlgorithms = (): JSX.Element => {
         quickSortBtn={quickSortBtn}
         mergeSortBtn={mergeSortBtn}
         bubbleSortBtn={bubbleSortBtn}
+        heapSortBtn={heapSortBtn}
         resetArray={resetArray}
       />
     </div>

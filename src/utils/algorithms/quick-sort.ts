@@ -1,10 +1,10 @@
-const swap = (arr, i, j) => {
+const swap = (arr, i, j): void => {
   const temp = arr[i];
   arr[i] = arr[j];
   arr[j] = temp;
 };
 
-const partition = (arr, start, end, animations) => {
+const partition = (arr, start, end, animations): number => {
   const pivot = start;
   let left = start + 1;
   let right = end;
