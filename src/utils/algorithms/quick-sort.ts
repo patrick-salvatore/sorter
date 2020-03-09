@@ -11,6 +11,7 @@ const partition = (arr, start, end, animations) => {
 
   while (right >= left) {
     if (arr[right] < arr[pivot] && arr[left] > arr[pivot]) {
+      // animations.push([])
       swap(arr, right, left);
     }
 

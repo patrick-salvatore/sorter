@@ -83,76 +83,12 @@ export const SortingAlgorithms = (): JSX.Element => {
   };
 
   const quickSortBtn = (): void => {
-    const auxiliaryArr = randomArray.slice();
     const [animations, sortedArr] = quickSort(randomArray);
     const arrayBars = Array.from(
       document.getElementsByClassName('array-bar') as HTMLCollectionOf<
         HTMLElement
       >
     );
-
-    console.log(animations);
-
-    //   const isColorChange = i % 2 === 0;
-
-    //   // if (isColorChange === true) {
-    //   //   const color = i % 6 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
-    //   //   const [barOneIndex, barTwoIndex] = animations[i];
-    //   //   if (barOneIndex === -1) {
-    //   //     continue;
-    //   //   }
-    //   //   const barOneStyle = arrayBars[barOneIndex].style;
-    //   //   const barTwoStyle = arrayBars[barTwoIndex].style;
-    //   //   setTimeout(() => {
-    //   //     barOneStyle.backgroundColor = color;
-    //   //     barTwoStyle.backgroundColor = color;
-    //   //   }, i * 10);
-    //   // } else {
-    //   const [barIndex, newHeight] = animations[i];
-    //   if (barIndex === -1) {
-    //     continue;
-    //   }
-    //   const barStyle = arrayBars[barIndex].style;
-    //   setTimeout(() => {
-    //     barStyle.height = `${auxiliaryArr[newHeight]}px`;
-    //   }, i * 10);
-    //   // }
-    // }
-
-    // toggleButtons('disable');
-
-    // for (let i = 0; i < animations.length - 1; i++) {
-    //   const isColorChange = i % 6 === 0 || i % 6 === 1;
-    //   if (isColorChange === true) {
-    //     const color = i % 6 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
-    //     const [barOneIndex, barTwoIndex] = animations[i];
-    //     if (barOneIndex === -1) {
-    //       continue;
-    //     }
-    //     const barOneStyle = arrayBars[barOneIndex].style;
-    //     const barTwoStyle = arrayBars[barTwoIndex].style;
-    //     setTimeout(() => {
-    //       barOneStyle.backgroundColor = color;
-    //       barTwoStyle.backgroundColor = color;
-    //     }, i * 10);
-    //   } else {
-    //     const [barIndex, newHeight] = animations[i];
-    //     if (barIndex === -1) {
-    //       continue;
-    //     }
-    //     const barStyle = arrayBars[barIndex].style;
-    //     setTimeout(() => {
-    //       barStyle.height = `${newHeight}px`;
-    //     }, i * 10);
-    //   }
-    // }
-
-    // setTimeout(() => {
-    //   for (let i = 0; i < arrayBars.length; i++) {
-    //     arrayBars[i].style.backgroundColor = 'lime';
-    //   }
-    //   toggleButtons('enable-reset');
-    // }, animations.length * 10);
   };
 
   const mergeSortBtn = (): void => {
