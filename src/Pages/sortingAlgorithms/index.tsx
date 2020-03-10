@@ -94,7 +94,6 @@ export const SortingAlgorithms = (): JSX.Element => {
         HTMLElement
       >
     );
-    console.log(animations);
 
     for (let i = 0; i < animations.length; i++) {
       const color = i % 3 === 0 ? 'red' : 'purple';
@@ -112,7 +111,6 @@ export const SortingAlgorithms = (): JSX.Element => {
         const [barIndex, newHeight] = animations[i];
         const barStyle = arrayBars[barIndex] && arrayBars[barIndex].style;
 
-        console.log(barIndex, newHeight);
         setTimeout(() => {
           if (barStyle) barStyle.height = `${newHeight}px`;
         }, i * ANIMATION_DELAY);
