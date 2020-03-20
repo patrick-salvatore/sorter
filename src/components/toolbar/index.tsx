@@ -38,7 +38,7 @@ interface IToolBarProps {
   mergeSortBtn: () => void;
   bubbleSortBtn: () => void;
   heapSortBtn: () => void;
-  resetArray: () => void;
+  resetApp: () => void;
 }
 
 const index: React.FC<IToolBarProps> = ({
@@ -46,7 +46,7 @@ const index: React.FC<IToolBarProps> = ({
   mergeSortBtn,
   bubbleSortBtn,
   heapSortBtn,
-  resetArray,
+  resetApp,
 }): JSX.Element => {
   const classes = useStyles();
 
@@ -120,7 +120,7 @@ const index: React.FC<IToolBarProps> = ({
             fontFamliy: 'Roboto',
             margin: '6px 8px',
           }}
-          onClick={resetArray}
+          onClick={resetApp}
           id="js-toolbar-reset-button"
         >
           RESET ARRAY

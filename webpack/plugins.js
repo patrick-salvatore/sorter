@@ -17,11 +17,7 @@ const plugins = [
   //   compiledIn: false,
   // }),
   new webpack.ProgressPlugin(),
-  new CleanWebpackPlugin({
-    root: '',
-    verbose: true,
-    dry: false,
-  }),
+  new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
     template: path.resolve(currentDirectory, 'public', 'index.html'),
     filename: 'index.html',
