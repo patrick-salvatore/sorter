@@ -4,10 +4,10 @@ const swap = (arr, i, j): void => {
   arr[j] = temp;
 };
 
-const partition = (arr, start, end, animations): number => {
-  const pivot = start;
-  let i = start + 1;
-  let j = end;
+const partition = (arr, low, high, animations): number => {
+  const pivot = low;
+  let i = low;
+  let j = high;
 
   while (j >= i) {
     if (arr[j] < arr[pivot] && arr[i] > arr[pivot]) {
@@ -29,7 +29,7 @@ const partition = (arr, start, end, animations): number => {
   if (pivot !== j) {
     animations.push([j, pivot]);
     animations.push([j, arr[pivot]]);
-    animations.push([i, arr[pivot]]);
+    animations.push([pivot, arr[j]]);
     swap(arr, j, pivot);
   }
 
@@ -43,19 +43,21 @@ const doQuickSort = (
   animations: any[]
 ): void => {
   if (low < high) {
-    const index = partition(arr, low, high, animations);
+    const midPoint = partition(arr, low, high, animations);
 
-    doQuickSort(arr, low, index - 1, animations);
-    doQuickSort(arr, index + 1, high, animations);
+    doQuickSort(arr, low, midPoint - 1, animations);
+    doQuickSort(arr, midPoint + 1, high, animations);
   }
 };
 
-export const quickSort = (arr: number[] = []): any[] => {
+export const quickSort = (
+  arr: number[] = []
+): { auxiliaryArr: number[]; animations: any[] } => {
   const animations = [];
   const auxiliaryArr = arr.slice();
-  if (arr.length <= 1) return [animations, arr];
+  if (auxiliaryArr.length <= 1) return { auxiliaryArr, animations };
 
-  doQuickSort(auxiliaryArr, 0, arr.length - 1, animations);
+  doQuickSort(auxiliaryArr, 0, auxiliaryArr.length - 1, animations);
 
-  return [animations, auxiliaryArr];
+  return { auxiliaryArr, animations };
 };

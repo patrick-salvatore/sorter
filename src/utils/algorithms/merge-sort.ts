@@ -54,10 +54,12 @@ function doMergeSort(
   doMerge(mainArray, startIdx, middleIdx, endIdx, auxiliaryArray, animations);
 }
 
-export function mergeSort(array): any[] {
+export function mergeSort(
+  array
+): { auxiliaryArr: number[]; animations: any[] } {
   const animations = [];
   if (array.length <= 1) return array;
-  const auxiliaryArray = array.slice();
-  doMergeSort(array, 0, array.length - 1, auxiliaryArray, animations);
-  return animations;
+  const auxiliaryArr = array.slice();
+  doMergeSort(array, 0, array.length - 1, auxiliaryArr, animations);
+  return { auxiliaryArr, animations };
 }

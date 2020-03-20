@@ -28,12 +28,14 @@ const doBubbleSort = (arr, animations): void => {
   }
 };
 
-export const bubbleSort = (arr): any[] => {
+export const bubbleSort = (
+  arr
+): { auxiliaryArr: number[]; animations: any[] } => {
   const animations = [];
   const auxiliaryArr = arr.slice();
   if (arr.length <= 1) return arr;
 
   doBubbleSort(auxiliaryArr, animations);
 
-  return animations;
+  return { auxiliaryArr, animations };
 };
