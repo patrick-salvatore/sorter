@@ -1,20 +1,22 @@
-import { quickSort, mergeSort } from '../algorithms';
+import { quickSort, mergeSort, bubbleSort } from '../algorithms';
 import { generateRandomIntArray } from '../index';
 
 const testArr = generateRandomIntArray(0, 200);
+const gen = testArr.sort((a, b) => a - b);
 
 describe('SORTING ALGORITHMS', () => {
   it('QUICK SORT', () => {
-    const qs = quickSort(testArr, 0, testArr.length - 1);
-    const gen = testArr.sort((a, b) => a - b);
-
-    expect(qs).toEqual(gen);
+    const { auxiliaryArr } = quickSort(testArr);
+    expect(auxiliaryArr).toEqual(gen);
   });
 
   it('MERGE SORT', () => {
-    const qs = mergeSort(testArr);
-    const gen = testArr.sort((a, b) => a - b);
+    const { auxiliaryArr } = mergeSort(testArr);
+    expect(auxiliaryArr).toEqual(gen);
+  });
 
-    expect(qs).toEqual(gen);
+  it('BUBBLE SORT', () => {
+    const { auxiliaryArr } = bubbleSort(testArr);
+    expect(auxiliaryArr).toEqual(gen);
   });
 });
