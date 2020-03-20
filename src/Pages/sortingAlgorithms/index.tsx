@@ -10,16 +10,13 @@ export const SortingAlgorithms = (): JSX.Element => {
   const [randomArray, setRandomArray] = useState<Array<number>>([]);
 
   const ANIMATION_DELAY = 12; //ms
-  const SECONDARY_COLOR = 'red'; //ms
-  const PRIMARY_COLOR = 'purple'; //ms
-  // const arrayBars = Array.from(
-  //   document.getElementsByClassName('array-bar') as HTMLCollectionOf<
-  //     HTMLElement
-  //   >
-  // ); //Array Bars
+  const SECONDARY_COLOR = 'red';
+  const PRIMARY_COLOR = 'purple';
+  const MIN_BAR_HEIGHT = 10;
+  const MAX_BAR_HEIGHT = 550;
 
   useEffect(() => {
-    setRandomArray(generateRandomIntArray(10, 550));
+    setRandomArray(generateRandomIntArray(MIN_BAR_HEIGHT, MAX_BAR_HEIGHT));
     return (): void => {
       setRandomArray([]);
     };
@@ -56,15 +53,15 @@ export const SortingAlgorithms = (): JSX.Element => {
     resetButton.disabled = false;
   };
 
-  const toggleButtons = (operator: string): void => {
+  const toggleButtons = (operation: string): void => {
     switch (true) {
-      case operator === 'disable':
+      case operation === 'disable':
         disableAllButtons();
         return;
-      case operator === 'enable':
+      case operation === 'enable':
         enableAllButtons();
         return;
-      case operator === 'enable-reset':
+      case operation === 'enable-reset':
         enableResetButton();
         return;
       default:
@@ -72,7 +69,7 @@ export const SortingAlgorithms = (): JSX.Element => {
     }
   };
 
-  const resetArray = (): void => {
+  const resetApp = (): void => {
     const arrayBars = Array.from(
       document.getElementsByClassName('array-bar') as HTMLCollectionOf<
         HTMLElement
@@ -83,21 +80,22 @@ export const SortingAlgorithms = (): JSX.Element => {
       arrayBars[i].style.backgroundColor = 'grey';
     }
 
-    setRandomArray(generateRandomIntArray(10, 550));
+    setRandomArray(generateRandomIntArray(MIN_BAR_HEIGHT, MAX_BAR_HEIGHT));
     toggleButtons('enable');
   };
 
   const quickSortBtn = (): void => {
-    const [animations, sortedArr] = quickSort(randomArray);
+    const { animations } = quickSort(randomArray);
     const arrayBars = Array.from(
       document.getElementsByClassName('array-bar') as HTMLCollectionOf<
         HTMLElement
       >
     );
+    toggleButtons('disable');
 
     for (let i = 0; i < animations.length; i++) {
       const color = i % 3 === 0 ? 'red' : 'purple';
-      const isColorChange = i % 3 === 0 && i !== 0;
+      const isColorChange = i % 3 === 0;
 
       if (isColorChange) {
         const [barOneIdx, barTwoIdx] = animations[i];
@@ -116,15 +114,22 @@ export const SortingAlgorithms = (): JSX.Element => {
         }, i * ANIMATION_DELAY);
       }
     }
+
+    setTimeout(() => {
+      for (let i = 0; i < arrayBars.length; i++) {
+        arrayBars[i].style.backgroundColor = 'lime';
+      }
+      toggleButtons('enable-reset');
+    }, animations.length * ANIMATION_DELAY);
   };
 
   const mergeSortBtn = (): void => {
-    const animations = mergeSort(randomArray);
+    const { animations } = mergeSort(randomArray);
     const arrayBars = Array.from(
       document.getElementsByClassName('array-bar') as HTMLCollectionOf<
         HTMLElement
       >
-    ); //Array Bars
+    );
 
     toggleButtons('disable');
 
@@ -157,12 +162,12 @@ export const SortingAlgorithms = (): JSX.Element => {
   };
 
   const bubbleSortBtn = (): void => {
-    const animations = bubbleSort(randomArray);
+    const { animations } = bubbleSort(randomArray);
     const arrayBars = Array.from(
       document.getElementsByClassName('array-bar') as HTMLCollectionOf<
         HTMLElement
       >
-    ); //Array Bars
+    );
 
     toggleButtons('disable');
 
@@ -201,7 +206,7 @@ export const SortingAlgorithms = (): JSX.Element => {
   };
 
   const heapSortBtn = (): void => {
-    const animations = heapSort(randomArray);
+    // const { animations } = heapSort(randomArray);
     alert('HEAP SORT');
   };
 
@@ -213,7 +218,7 @@ export const SortingAlgorithms = (): JSX.Element => {
         mergeSortBtn={mergeSortBtn}
         bubbleSortBtn={bubbleSortBtn}
         heapSortBtn={heapSortBtn}
-        resetArray={resetArray}
+        resetApp={resetApp}
       />
     </div>
   );
